@@ -12,12 +12,9 @@ export class AuthDialogComponent implements OnInit {
   modalActions = new EventEmitter<string|MaterializeAction>();
 
   constructor() {
-
   }
 
   onLoginFormResult(e){
-
-
     if(e.signedIn)
       this.closeDialog();
     else{
@@ -33,8 +30,6 @@ export class AuthDialogComponent implements OnInit {
     }
   }
 
-
-
   openDialog(mode: 'login' | 'register' = 'login'){
     this.authMode = mode;
     this.modalActions.emit({action:"modal", params:['open']});
@@ -49,6 +44,4 @@ export class AuthDialogComponent implements OnInit {
 
   isLoginMode(){return this.authMode == 'login'}
   isRegisterMode(){return this.authMode == 'register'}
-
-
 }
